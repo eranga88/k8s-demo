@@ -22,7 +22,7 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
     - name: Build
-      run: mvn package SpringbootApp/
+      run: mvn package ./SpringbootApp/pom.xml
     - name: list directories
       run: ls -al SpringbootApp/target/
     - name: docker build
