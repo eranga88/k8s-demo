@@ -22,7 +22,7 @@ public class BlueskyApplication {
 		ip = InetAddress.getLocalHost();
 		hostname = ip.getHostName();
 
-		return ( "  Host Name and  IP address is : "+ip);
+		return ("Hello Kube! from " + ip);
 
 	}
 
