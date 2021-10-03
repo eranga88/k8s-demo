@@ -22,10 +22,8 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
 
-    - name: Change Directory to SpringbootApp
-      run: cd SpringbootApp
     - name: Build
-      run: mvn package
+      run: mvn -B package --file SpringbootApp/pom.xml
     # - name: list directories
     #   run: ls -al SpringbootApp/target/
     # - name: docker build
