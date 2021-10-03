@@ -44,20 +44,23 @@ jobs:
         push: true
         tags: sael1988/bluesky-k8s-demo:latest
 
-  Deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@master
-    - name: kubectl - Google Cloud GKE cluster.
-      uses: ameydev/gke-kubectl-action@master
-      env:
-        PROJECT_ID: ${{ env.PROJECT_ID }}
-        APPLICATION_CREDENTIALS: ${{ secrets.GKE_SECRET }}
-        CLUSTER_NAME: ${{ env.GKE_CLUSTER }}
-        ZONE_NAME: ${{ env.GKE_ZONE }}
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    # Setup gcloud CLI
+    - uses: google-github-actions/setup-gcloud@master
       with:
-        args: kubectl apply -f k8s/
+        service_account_key: ${{ secrets.GKE_SECRET }}
+        project_id: ${{ secrets.GKE_PROJECT}}
+
+    # Get the GKE credentials so we can deploy to the cluster
+    - run: |-
+        gcloud container clusters get-credentials "$GKE_CLUSTER" --zone "$GKE_ZONE"
+    # Deploy sample image to the GKE cluster
+    - name: Deploy
+      run: |-
+        kubectl apply -f k8s/webapp.yml
+  
 
 
       
