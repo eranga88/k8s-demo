@@ -24,8 +24,8 @@ jobs:
 
     - name: Change Directory to SpringbootApp
       run: cd SpringbootApp
-    # - name: Build
-    #   run: mvn package SpringbootApp
+    - name: Build
+      run: mvn package
     # - name: list directories
     #   run: ls -al SpringbootApp/target/
     # - name: docker build
