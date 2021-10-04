@@ -22,13 +22,13 @@ spec:
     spec:
       containers:
       - name: webapp
-        image: sael1988/bluesky-k8s-demo:1.0.2
+        image: sael1988/bluesky-k8s-demo:1.0.3
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
         readinessProbe:
           httpGet:
-            path: /bluesky
+            path: bluesky
             port: 8080
           successThreshold: 3
 
