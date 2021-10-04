@@ -1,3 +1,5 @@
+# Author Name : Singappuli Arachchige Eranga Lakmal Perera
+
 provider "google"{
     credentials = file(var.gcp_credentials)
     project = var.gcp_project_id
