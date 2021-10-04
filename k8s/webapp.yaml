@@ -10,9 +10,8 @@ spec:
   strategy:
     type: RollingUpdate
     rollingUpdate:
-      maxSurge: 1
-      maxUnavailable: 25%
-  minReadySeconds: 5
+      maxSurge: 50%
+      maxUnavailable: 50%
   selector:
     matchLabels:
       app: webapp
@@ -26,10 +25,6 @@ spec:
         image: sael1988/bluesky-k8s-demo:1.0.0
         ports:
         - containerPort: 8080
-        readinessProbe:
-          httpGet:
-             path: bluesky
-             port: 8080
 
 
 ---
