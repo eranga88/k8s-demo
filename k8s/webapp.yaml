@@ -28,7 +28,7 @@ spec:
         - containerPort: 8080
         readinessProbe:
           httpGet:
-             path: /bluesky
+             path: bluesky
              port: 8080
 
 
@@ -40,7 +40,7 @@ metadata:
 spec:
   selector:
     app: webapp
-  # type: LoadBalancer
+  type: LoadBalancer
   ports:
     - protocol: TCP
       port: 8080
