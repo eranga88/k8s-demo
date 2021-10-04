@@ -21,10 +21,6 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
-  strategy: 
-    type: Recreate
-    rollingUpdate: null
-
 
 ---
 apiVersion: v1
