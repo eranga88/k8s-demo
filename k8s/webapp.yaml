@@ -10,11 +10,10 @@ spec:
   selector:
     matchLabels:
       app: webapp
-  strategy:                               
-    type: RollingUpdate         
+  updateStrategy:
+    type: RollingUpdate
     rollingUpdate:
-      maxSurge: 25%             
-      maxUnavailable: 25%    
+      maxUnavailable: 1
   template:
     metadata:
       labels:
@@ -22,15 +21,12 @@ spec:
     spec:
       containers:
       - name: webapp
-        image: sael1988/bluesky-k8s-demo:1.0.4
+        image: sael1988/bluesky-k8s-demo:1.0.5
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
-        readinessProbe:
-          httpGet:
-            path: bluesky
-            port: 8080
-          successThreshold: 3
+
+
 
 ---
 apiVersion: v1
