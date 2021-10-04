@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: webapp
-        image: sael1988/bluesky-k8s-demo:1.0.${{ github.run_number }}
+        image: sael1988/bluesky-k8s-demo:1.0.${{ event.run_number }}
         ports:
         - containerPort: 8080
         # readinessProbe:
