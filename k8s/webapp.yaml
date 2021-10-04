@@ -26,7 +26,7 @@ spec:
       terminationGracePeriodSeconds: 15
       containers:
       - name: webapp
-        image: sael1988/bluesky-k8s-demo:latest
+        image: sael1988/bluesky-k8s-demo:1.0.0
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
