@@ -17,14 +17,14 @@ public class BlueskyApplication {
 		SpringApplication.run(BlueskyApplication.class, args);
 	}
 
-	@GetMapping("bluesky")
+	@GetMapping("/")
 	public String eranga() throws UnknownHostException {
 		InetAddress ip;
 		String hostname;
 		ip = InetAddress.getLocalHost();
 		hostname = ip.getHostName();
 
-		//return ("Hello Kube! from " + ip);
+		return ("Hello Kube! from " + ip);
 
 	}
 
