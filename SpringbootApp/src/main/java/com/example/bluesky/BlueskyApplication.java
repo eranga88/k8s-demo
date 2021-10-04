@@ -17,7 +17,7 @@ public class BlueskyApplication {
 		SpringApplication.run(BlueskyApplication.class, args);
 	}
 
-	@GetMapping("bluesky")
+	@GetMapping("blueskyTest")
 	public String eranga() throws UnknownHostException {
 		InetAddress ip;
 		String hostname;
