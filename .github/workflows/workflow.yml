@@ -1,4 +1,4 @@
-
+# Author Name : Singappuli Arachchige Eranga Lakmal Perera
 
 name: Java CI with Maven
 
@@ -46,17 +46,12 @@ jobs:
 
     - name: Checkout
       uses: actions/checkout@v2
-
-    # Setup gcloud CLI
     - uses: google-github-actions/setup-gcloud@master
       with:
         service_account_key: ${{ secrets.GKE_SECRET }}
         project_id: ${{ secrets.GKE_PROJECT}}
-
-    # Get the GKE credentials so we can deploy to the cluster
     - run: |-
         gcloud container clusters get-credentials "$GKE_CLUSTER" --zone "$GKE_ZONE"
-    # Deploy sample image to the GKE cluster
     - name: Deploy
       run: |-
         kubectl apply -f k8s/
