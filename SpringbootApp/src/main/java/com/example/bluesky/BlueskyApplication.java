@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-// Author Name : Singappuli Arachchige Eranga Lakmal Perera
+// Author : Singappuli Arachchige Eranga Lakmal Perera
 
 @SpringBootApplication
 @RestController

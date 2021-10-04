@@ -1,4 +1,4 @@
-# Author Name : Singappuli Arachchige Eranga Lakmal Perera
+# Author : Singappuli Arachchige Eranga Lakmal Perera
 
 module "gke" {
   source                     = "terraform-google-modules/kubernetes-engine/google"

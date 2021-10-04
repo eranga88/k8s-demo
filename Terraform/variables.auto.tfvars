@@ -1,3 +1,4 @@
+# Author: Singappuli Arachchige Eranga Lakmal Perera
 gcp_credentials = "bluesky-project.json"
 gcp_project_id = "bluesky-gke"
 gcp_region = "us-west1"

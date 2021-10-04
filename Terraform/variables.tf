@@ -1,3 +1,5 @@
+# Author: Singappuli Arachchige Eranga Lakmal Perera
+
 variable "gcp_credentials"{
     type = string
     description = "Location of service account for GCP"

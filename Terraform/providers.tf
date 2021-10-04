@@ -1,4 +1,4 @@
-# Author Name : Singappuli Arachchige Eranga Lakmal Perera
+# Author : Singappuli Arachchige Eranga Lakmal Perera
 
 provider "google"{
     credentials = file(var.gcp_credentials)
