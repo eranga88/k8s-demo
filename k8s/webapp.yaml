@@ -27,7 +27,7 @@ spec:
         - containerPort: 8080
         livenessProbe:
           httpGet:
-            path: /bluesky
+            path: bluesky
             port: 8080
             httpHeaders:
             - name: Custom-Header
