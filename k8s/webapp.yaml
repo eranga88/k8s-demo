@@ -10,7 +10,7 @@ spec:
   selector:
     matchLabels:
       app: webapp
-  updateStrategy:
+  strategy:
     type: RollingUpdate
     rollingUpdate:
       maxUnavailable: 1
@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: webapp
-        image: sael1988/bluesky-k8s-demo:1.0.5
+        image: sael1988/bluesky-k8s-demo:1.0.6
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
