@@ -30,7 +30,7 @@ spec:
           httpGet:
              path: /bluesky
              port: 8080
-             periodSeconds: 5
+
 
 ---
 apiVersion: v1
