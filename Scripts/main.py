@@ -1,7 +1,7 @@
 import os
 import sys
 
-GKE_ZONE = sys.argv[0]
+GKE_ZONE = sys.argv[1]
 
 command = 'kubectl get all'
 
