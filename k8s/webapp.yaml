@@ -11,9 +11,10 @@ spec:
     matchLabels:
       app: webapp
   strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
+  type: RollingUpdate
+  rollingUpdate:
+    maxSurge: 1
+    maxUnavailable: 25%
   template:
     metadata:
       labels:
@@ -25,6 +26,13 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
+        readinessProbe:
+          httpGet:
+             path: bluesky
+             port: 8080
+             initialDelaySeconds: 5
+             periodSeconds: 5
+             successThreshold: 1
 
 
 
