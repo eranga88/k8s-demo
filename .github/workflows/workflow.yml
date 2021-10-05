@@ -31,7 +31,7 @@ jobs:
     - name: list directories
       run: ls -al SpringbootApp/target/
     - name: docker build
-      run: docker build SpringbootApp/ -t sael1988/bluesky-k8s-demo:1.0.14
+      run: docker build SpringbootApp/ -t sael1988/bluesky-k8s-demo:1.0.15
     - name: login to the docker hub
       uses: docker/login-action@v1
       with:
@@ -42,7 +42,7 @@ jobs:
       with:
         context: ./SpringbootApp
         push: true
-        tags: sael1988/bluesky-k8s-demo:1.0.14
+        tags: sael1988/bluesky-k8s-demo:1.0.15
 
     - name: Checkout
       uses: actions/checkout@v2
