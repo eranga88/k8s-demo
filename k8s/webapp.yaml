@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: webapp
-        image: sael1988/bluesky-k8s-demo:1.0.0
+        image: sael1988/bluesky-k8s-demo:1.0.2
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
