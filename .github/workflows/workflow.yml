@@ -12,6 +12,7 @@ env:
   PROJECT_ID: ${{ secrets.GKE_PROJECT }}
   GKE_CLUSTER: bluesky-cluster   
   GKE_ZONE: us-west1-a
+  GKE_BLUE_SVC_IP: None
     
 jobs:
   build:
@@ -26,23 +27,23 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
 
-    - name: Build
-      run: mvn -B package --file SpringbootApp/pom.xml
-    - name: list directories
-      run: ls -al SpringbootApp/target/
-    - name: docker build
-      run: docker build SpringbootApp/ -t sael1988/bluesky-k8s-demo:1.0.17
-    - name: login to the docker hub
-      uses: docker/login-action@v1
-      with:
-        username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_PASSWORD }}
-    - name: push image
-      uses: docker/build-push-action@v2
-      with:
-        context: ./SpringbootApp
-        push: true
-        tags: sael1988/bluesky-k8s-demo:1.0.17
+    # - name: Build
+    #   run: mvn -B package --file SpringbootApp/pom.xml
+    # - name: list directories
+    #   run: ls -al SpringbootApp/target/
+    # - name: docker build
+    #   run: docker build SpringbootApp/ -t sael1988/bluesky-k8s-demo:1.0.17
+    # - name: login to the docker hub
+    #   uses: docker/login-action@v1
+    #   with:
+    #     username: ${{ secrets.DOCKER_USERNAME }}
+    #     password: ${{ secrets.DOCKER_PASSWORD }}
+    # - name: push image
+    #   uses: docker/build-push-action@v2
+    #   with:
+    #     context: ./SpringbootApp
+    #     push: true
+    #     tags: sael1988/bluesky-k8s-demo:1.0.17
 
     - name: Checkout
       uses: actions/checkout@v2
@@ -52,9 +53,17 @@ jobs:
         project_id: ${{ secrets.GKE_PROJECT}}
     - run: |-
         gcloud container clusters get-credentials "$GKE_CLUSTER" --zone "$GKE_ZONE"
-    - name: Deploy
+    # - name: Deploy
+    #   run: |-
+    #     kubectl apply -f k8s/
+
+    - name: get-blue-service-ip
       run: |-
-        kubectl apply -f k8s/
+          ip_block = $(kubectl get svc webapp-service)
+          echo ip_block
+
+
+
   
 
 
