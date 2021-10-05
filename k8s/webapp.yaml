@@ -22,16 +22,20 @@ spec:
     spec:
       containers:
       - name: webapp
-        image: sael1988/bluesky-k8s-demo:1.0.11
+        image: sael1988/bluesky-k8s-demo:1.0.12
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
-        readinessProbe:
-          httpGet:
-             path: bluesky
-             port: 8080
-             periodSeconds: 5
+      readinessProbe:
+        tcpSocket:
+          path: bluesky
+          port: 8080
+      livenessProbe:
+        httpGet:
+          path: bluesky
+          port: 8080
 
+        
 
 
 
