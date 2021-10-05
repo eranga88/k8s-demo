@@ -58,9 +58,7 @@ jobs:
     #     kubectl apply -f k8s/
 
     - name: get-blue-service-ip
-      run: |-
-          ip_block = $(kubectl get svc webapp-service)
-          echo ip_block
+      run: python
 
 
 
