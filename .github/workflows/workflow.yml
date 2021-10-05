@@ -58,7 +58,7 @@ jobs:
     #     kubectl apply -f k8s/
 
     - name: get-blue-service-ip
-      run: python ./Scripts/main.py
+      run: python ./Scripts/main.py $GKE_ZONE
 
 
 
