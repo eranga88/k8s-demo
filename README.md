@@ -7,7 +7,7 @@ As shown in the Figure 2 create a new project in GCP
 
 # Enable Kubernetes API Engine
 
-![alt text](./images/kubernetes_API_Engine.JPG)
+![alt text](./images/Kubernetes_API_Engine.JPG)
 `Figure: 3`
 
 
