@@ -55,3 +55,13 @@ As shown in the Figure 8 , navigate to Terraform folder and move downloaded json
 - `terraform plan`
 - `terraform apply`
 
+# Add following secrets to github secrets
+
+![alt text](./images/github_secrets.JPG)
+
+`Figure: 10`
+
+- `DOCKER_USERNAME` - Dockerhub username
+- `DOCKER_PASSWORD` - DOckerhub password
+- `GKE_PROJECT` - project id (Project created in GCP)
+- `GKE_SECRET`  - Holds GCP service account json file content
