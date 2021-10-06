@@ -41,6 +41,12 @@ As shown in the Figure 7 create and download the service account key as a JSON f
 
 `Figure: 8`
 
+# Add your gcp_credentials , gcp_project_id , gke_cluster_name , gke_default_nodepool_name and gke_service_account_name into variables.auto.tfvars file.
+
+![alt text](./images/setup_variable_values_in_terraform.JPG)
+
+`Figure: 9`
+
 As shown in the Figure 8 , navigate to Terraform folder and move downloaded json key file into that folder.
 
 ### Run following commands in Terminal
