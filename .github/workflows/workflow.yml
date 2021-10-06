@@ -53,9 +53,11 @@ jobs:
         project_id: ${{ secrets.GKE_PROJECT}}
     - run: |-
         gcloud container clusters get-credentials "$GKE_CLUSTER" --zone "$GKE_ZONE"
-    - name: Deploy
-      run: |-
-        kubectl apply -f k8s/
+    # - name: Deploy
+    #   run: |-
+    #     kubectl apply -f k8s/
+
+    
 
 
 
