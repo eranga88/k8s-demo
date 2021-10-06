@@ -30,9 +30,9 @@ spec:
           httpGet:
             path: /bluesky
             port: 8080
-          timeoutSeconds: 2
-          initialDelaySeconds: 10
-          periodSeconds: 10
+          timeoutSeconds: 1
+          initialDelaySeconds: 1
+          periodSeconds: 1
 
 
 ---
