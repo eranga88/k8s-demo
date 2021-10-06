@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: webapp
-        image: sael1988/bluesky-k8s-demo:1.0.2
+        image: sael1988/bluesky-k8s-demo:1.0.0
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
@@ -31,8 +31,8 @@ spec:
             path: /bluesky
             port: 8080
           timeoutSeconds: 1
-          # initialDelaySeconds: 5
-          # periodSeconds: 5
+          initialDelaySeconds: 5
+          periodSeconds: 5
 
 
 ---
