@@ -24,7 +24,7 @@ public class BlueskyApplication {
 		ip = InetAddress.getLocalHost();
 		hostname = ip.getHostName();
 
-		return ("Hello Kubenetes  ! from " + ip);
+		return ("Hello Kubenetes 8 ! from " + ip);
 
 	}
 
