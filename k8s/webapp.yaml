@@ -24,15 +24,33 @@ spec:
       - name: webapp
         image: sael1988/bluesky-k8s-demo:1.0.0
         imagePullPolicy: Always
+        args:
+        - /bin/sh
+        - -c
+        - touch /tmp/healthy; sleep 30; rm -rf /tmp/healthy; sleep 600
         ports:
         - containerPort: 8080
-        readinessProbe:
+        # readinessProbe:
+        #   httpGet:
+        #     path: /bluesky
+        #     port: 8080
+        #   timeoutSeconds: 1
+        #   initialDelaySeconds: 1
+        #   periodSeconds: 1
+
+        livenessProbe:
           httpGet:
             path: /bluesky
             port: 8080
-          timeoutSeconds: 1
-          initialDelaySeconds: 1
-          periodSeconds: 1
+          failureThreshold: 1
+          periodSeconds: 10
+
+        startupProbe:
+          httpGet:
+            path: /bluesky
+            port: 8080
+          failureThreshold: 30
+          periodSeconds: 10
 
 
 ---
