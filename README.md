@@ -35,7 +35,7 @@ As shown in the Figure 2 create a new project in GCP
 
 As shown in the Figure 7 create and download the service account key as a JSON file.
 
-# Setup GKE 
+# Setup Kubernetes Cluster in GCP 
 
 ![alt text](./images/terraform_folder.JPG)
 
@@ -45,7 +45,7 @@ As shown in the Figure 8 , navigate to Terraform folder and move downloaded json
 
 ### Run following commands in Terminal
 
-## terraform init
-## terraform plan
-## terraform apply
+#### terraform init
+#### terraform plan
+#### terraform apply
 
