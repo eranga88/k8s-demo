@@ -26,13 +26,6 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
-        # readinessProbe:
-        #   httpGet:
-        #     path: /bluesky
-        #     port: 8080
-        #   timeoutSeconds: 1
-        #   initialDelaySeconds: 1
-        #   periodSeconds: 1
 
         livenessProbe:
           httpGet:

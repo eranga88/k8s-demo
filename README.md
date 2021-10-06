@@ -1,3 +1,4 @@
-# k8s-demo
-Blue sky digital project 
+# Architecture
+System Architecture
+![alt text](./images/Capture.JPG)
 
