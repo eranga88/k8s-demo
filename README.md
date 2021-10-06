@@ -76,3 +76,7 @@ As shown in the Figure 8 , navigate to Terraform folder and move downloaded json
 - `DOCKER_PASSWORD` - Dockerhub password
 - `GKE_PROJECT` - project id (Project created in GCP)
 - `GKE_SECRET`  - Holds GCP service account json file content
+
+#### 9. Use follwoing command to access web service
+
+- `curl <ip address>:8080/bluesky`
