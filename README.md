@@ -45,7 +45,7 @@ As shown in the Figure 8 , navigate to Terraform folder and move downloaded json
 
 ### Run following commands in Terminal
 
-#### terraform init
-#### terraform plan
-#### terraform apply
+- `terraform init`
+- `terraform plan`
+- `terraform apply`
 
