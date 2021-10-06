@@ -1,4 +1,12 @@
-# Create a new project in GCP
+### System Architecture
+
+![alt text](./images/architecture.JPG)
+
+`Figure: 1`
+
+### Please follwo following steps 
+
+### 1. Create a new project in GCP
 
 ![alt text](./images/create_new_project.JPG)
 
@@ -6,20 +14,20 @@
 
 As shown in the Figure 2 create a new project in GCP
 
-# Enable Kubernetes API Engine
+### 2. Enable Kubernetes API Engine
 
 ![alt text](./images/Kubernetes_API_Engine.JPG)
 
 `Figure: 3`
 
 
-# Create a new service account under the project created in GCP
+### 3. Create a new service account under the project created in GCP
 
 ![alt text](./images/create_service_account.JPG)
 
 `Figure: 4`
 
-# Create a new key for service account
+### 4. Create a new key for service account
 
 ![alt text](./images/create_new_key.JPG)
 
@@ -35,33 +43,34 @@ As shown in the Figure 2 create a new project in GCP
 
 As shown in the Figure 7 create and download the service account key as a JSON file.
 
-# Setup Kubernetes Cluster in GCP 
+### 5. Setup Kubernetes Cluster in GCP 
 
 ![alt text](./images/terraform_folder.JPG)
 
 `Figure: 8`
 
-# Add your gcp_credentials , gcp_project_id , gke_cluster_name , gke_default_nodepool_name and gke_service_account_name into variables.auto.tfvars file.
+As shown in the Figure 8 , navigate to Terraform folder and move downloaded json key file into that folder.
+
+
+### 6. Add your gcp_credentials , gcp_project_id , gke_cluster_name , gke_default_nodepool_name and gke_service_account_name into variables.auto.tfvars file.
 
 ![alt text](./images/setup_variable_values_in_terraform.JPG)
 
 `Figure: 9`
 
-As shown in the Figure 8 , navigate to Terraform folder and move downloaded json key file into that folder.
-
-### Run following commands in Terminal
+### 7. Run following commands in Terminal
 
 - `terraform init`
 - `terraform plan`
 - `terraform apply`
 
-# Add following secrets to github secrets
+### 8. Add following secrets to github secrets
 
 ![alt text](./images/github_secrets.JPG)
 
 `Figure: 10`
 
 - `DOCKER_USERNAME` - Dockerhub username
-- `DOCKER_PASSWORD` - DOckerhub password
+- `DOCKER_PASSWORD` - Dockerhub password
 - `GKE_PROJECT` - project id (Project created in GCP)
 - `GKE_SECRET`  - Holds GCP service account json file content
